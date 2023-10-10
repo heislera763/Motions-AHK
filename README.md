@@ -1,3 +1,3 @@
 # Motions-AHK
-Using Autohotkey to turn my right alt key into a meta key for cursor movement so that I can keep my hands on the home row in any program.
-Somewhat inspired by emacs and vim cursor movement.
+Using AutoHotkey to turn my right alt key into a dedicated meta key for insertion point movement so that I can keep my hands on the home row while I move my insertion point.
+Inspired by emacs and vim cursor movement.
