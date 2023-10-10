@@ -12,3 +12,5 @@ RAlt & r::Send("{Up}")           ; Meta-r for up arrow
 RAlt & v::Send("{Down}")         ; Meta-v for down arrow
 RAlt & u::Send("{PgUp}")         ; Meta-u for page up
 RAlt & m::Send("{PgDn}")         ; Meta-m for page down
+RAlt & d::Send("{Ctrl down}{Left}{Ctrl up}") ; Meta-d for beginning of previous word
+RAlt & k::Send("{Ctrl down}{Right}{Ctrl up}") ; Meta-k for beginning of next word
