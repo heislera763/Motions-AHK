@@ -3,14 +3,38 @@
 ; Block Right Alt (AltGr) from its original function
 RAlt::return
 
+; Function to send keys based on Shift being held
+SendKey(key) {
+    if (GetKeyState("Shift", "P")) {
+        Send("+{" key "}")
+    } else {
+        Send("{" key "}")
+    }
+}
+
+; Function to send Tab or Shift+Tab based on Shift being held
+SendTab() {
+    if (GetKeyState("Shift", "P")) {
+        Send("+{Tab}")
+    } else {
+        Send("{Tab}")
+    }
+}
+
 ; Right Alt (AltGr) as Meta
-RAlt & f::Send("{Left}")         ; Meta-f for left arrow
-RAlt & j::Send("{Right}")        ; Meta-j for right arrow
-RAlt & s::Send("{Home}")         ; Meta-s for start of line
-RAlt & l::Send("{End}")          ; Meta-l for end of line
-RAlt & r::Send("{Up}")           ; Meta-r for up arrow
-RAlt & v::Send("{Down}")         ; Meta-v for down arrow
-RAlt & u::Send("{PgUp}")         ; Meta-u for page up
-RAlt & m::Send("{PgDn}")         ; Meta-m for page down
-RAlt & d::Send("{Ctrl down}{Left}{Ctrl up}") ; Meta-d for beginning of previous word
-RAlt & k::Send("{Ctrl down}{Right}{Ctrl up}") ; Meta-k for beginning of next word
+RAlt & f::SendKey("Left")
+RAlt & j::SendKey("Right")
+RAlt & s::SendKey("Home")
+RAlt & l::SendKey("End")
+RAlt & r::SendKey("Up")
+RAlt & v::SendKey("Down")
+RAlt & u::SendKey("PgUp")
+RAlt & m::SendKey("PgDn")
+RAlt & d::Send("{Ctrl down}{Left}{Ctrl up}")
+RAlt & k::Send("{Ctrl down}{Right}{Ctrl up}")
+
+; Allow Meta + Enter
+RAlt & Enter::Send("{Enter}")
+
+; Allow Meta + Tab or Meta + Shift + Tab
+RAlt & Tab::SendTab()
